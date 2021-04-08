@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Breach !</title>
+  <link rel="icon" type="image/png" href="favicon.png" />
+
+  <!-- Fichier de style + Framework Bootstrap -->
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+</head>
+
+<body>
+  <section class="vh-100">
+    <div class="container h-100">
+
+      <!-- Écran d'accueil -->
+      <div id="homeScreen" class="h-100">
+        <div class="d-flex flex-column align-items-center justify-content-center h-100">
+            <h1>Breach !</h1>
+
+            <div class="form-group">
+              <input type="text" placeholder="Enter Player Name" id="playerNameInput" required/>
+            </div>
+
+            <!-- Menu des choix de mode -->
+            <div class="d-flex flex-row">
+              <button type="submit" class="btn btn-primary main-btn" id="newGameBtn"> Challenge a friend ! </button>
+
+              <button type="button" class="btn btn-danger main-btn" id="joinBtn" onclick="joinBtn();"> Join a game ! </button>
+              <div id="joinDiv">
+                <input type="text" placeholder="Game Code" id="gameCodeInput"/>
+                <button type="submit" class="btn btn-danger" id="joinGameBtn"> Join ! </button>
+              </div>
+
+              <button type="button" class="btn btn-success main-btn" id="localBtn" onclick="localBtn();"> Play local mode ! </button>
+              <div id="localDiv">
+                <input type="text" placeholder="Name of P2" id="secondNameInput"/>
+                <button type="submit" class="btn btn-success" id="localGameBtn"> Play ! </button>
+              </div>
+
+              <button type="submit" class="btn btn-warning main-btn" id="cpuGameBtn"> Versus CPU ! </button>
+            </div>
+
+        </div>
+      </div>
+
+      <!-- Écran de jeu -->
+      <div id="gameScreen" class="h-100">
+        <div class="d-flex flex-column align-items-center justify-content-center h-100">
+
+          <h1>Breach !</h1>
+          <h2>The game code is : <span id="gameCodeDisplay"></span></h2>
+          <p><span id="playerOneName">Joueur 1</span> : <span id="playerOneScore">0</span> - <span id="playerTwoName">Joueur 2</span> : <span id="playerTwoScore">0</span></p>
+          <canvas id="canvas"></canvas>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Socket.io + Scripts JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.js"></script>
+  <script src="index.js"></script>
+</body>
+</html>

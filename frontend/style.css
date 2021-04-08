@@ -1,0 +1,48 @@
+main {
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center
+}
+
+h1, p {
+    text-align: center;
+}
+
+input{
+   text-align:center;
+}
+
+canvas {
+    width: 600px;
+    height: 400px;
+}
+
+.main-btn {
+    display: block;
+    width: 100px;
+    height: 100px;
+    margin: 5px;
+}
+
+#joinDiv, #localDiv {
+    display: none;
+    flex-direction: column;
+    width: 100px;
+    margin: 5px;
+}
+
+#joinDiv input, #localDiv input {
+    display: flex;
+    width: 100px;
+    height: 50px;
+}
+
+#joinDiv button, #localDiv button {
+    width: 100px;
+    height: 50px;
+}
+
+#gameScreen {
+    display: none;
+}
